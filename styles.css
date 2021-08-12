@@ -1,0 +1,113 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 13px;
+}
+body{
+    background-color: hsl(210, 46%, 95%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 30px;
+}
+#card1, #card2, #card3, #card4, #card5{
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 5px 5px 10px hsl(0, 0%, 81%);
+}
+#card1, #card2, #card4{
+    color: white;
+}
+#card1{
+    grid-area: cardd1;
+    background-color: hsl(263, 55%, 52%);
+    position: relative;
+}
+.watermark{
+    position: absolute;
+    font-size: 30rem;
+    letter-spacing: -1.5rem;
+    font-family: 'Jockey One', sans-serif;
+    top: -65px;
+    right: 50px;
+    transform: rotate(180deg);
+    opacity: 40%;
+}
+#card2{
+    grid-area: cardd2;
+    background-color: hsl(217, 19%, 35%);
+}
+#card3{
+    grid-area: cardd3;
+    background-color: #fff;
+}
+#card4{
+    grid-area: cardd4;
+    background-color: hsl(219, 29%, 14%);
+}
+#card5{
+    grid-area: cardd5;
+    background-color: white;
+}
+.maingrid{
+    max-width: 1190px;
+    display: grid;
+    grid-template-areas: 
+    'cardd1 cardd1 cardd1 cardd1 cardd1 cardd1 cardd2 cardd2 cardd5 cardd5'
+    'cardd3 cardd3 cardd4 cardd4 cardd4 cardd4 cardd4 cardd4 cardd5 cardd5';
+    grid-gap: 20px;
+}
+
+.image{
+    float: left;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    border: 1px solid white;
+}
+
+.intro{
+    float: left;
+    position: relative;
+    margin-left: 15px;
+    top: 3px;
+}
+.name{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.view{
+    clear: both;
+    font-size: 1.4rem;
+    padding: 20px 0;
+}
+.designation{
+    opacity: 50%;
+    font-weight: 500;
+}
+.msg{
+    opacity: 70%;
+    line-height: 150%;
+    letter-spacing: 0.5px;
+}
+
+@media (max-width: 375px){
+    body{
+        padding: 5vh 4vw;
+    }
+    .maingrid{
+
+        grid-template-areas: 
+        'cardd1'
+        'cardd2'
+        'cardd3'
+        'cardd4'
+        'cardd5';
+    } 
+    .watermark{
+        right: 0;
+    }
+}
